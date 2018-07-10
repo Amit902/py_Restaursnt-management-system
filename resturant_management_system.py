@@ -19,12 +19,12 @@ f2.pack(side=RIGHT)
 #------------------TIME--------------
 
 localtime=time.asctime(time.localtime(time.time()))
-
+time.sleep(1)
 #                           ***
 
 lbfo = Label(Tops, font=( 'aria' ,30, 'bold' ),text="RESTAURANT MANAGEMENT SYSTEM",fg="dark green",bd=10,anchor='w')
 lbfo.grid(row=0,column=0)
-lbfo = Label(Tops, font=( 'aria' ,20, ),text=localtime,fg="black",anchor=W)
+lbfo = Label(Tops, font=( 'aria' ,20,'bold' ),text=localtime,fg="black",anchor=W)
 lbfo.grid(row=1,column=0)
 
 #---------------Calculator------------------
@@ -164,6 +164,31 @@ lblDrinks=Label(f1,font=( 'aria' ,15, 'bold' ),text="Drinks",bd=10,anchor='w')
 lblDrinks.grid(row=0,column=2)
 txtDrinks=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtDrinks.grid(row=0,column=3)
+
+lblcost=Label(f1,font=( 'aria' ,15, 'bold' ),text="Cost of Food",bd=10,anchor='w')
+lblcost.grid(row=1,column=2)
+txtcost=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtcost.grid(row=1,column=3)
+
+lblservice=Label(f1,font=( 'aria' ,15, 'bold' ),text="Services Charge",bd=10,anchor='w')
+lblservice.grid(row=2,column=2)
+txtservice=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtservice.grid(row=2,column=3)
+
+lblstate=Label(f1,font=( 'aria' ,15, 'bold' ),text="State Tax",bd=10,anchor='w')
+lblstate.grid(row=3,column=2)
+txtstate=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtstate.grid(row=3,column=3)
+
+lblsubtotal=Label(f1,font=( 'aria' ,15, 'bold' ),text="Sub Total",bd=10,anchor='w')
+lblsubtotal.grid(row=4,column=2)
+txtsubtotal=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtsubtotal.grid(row=4,column=3)
+
+lbltotalcost=Label(f1,font=( 'aria' ,15, 'bold' ),text="Sub Total",bd=10,anchor='w')
+lbltotalcost.grid(row=5,column=2)
+txttotalcost=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txttotalcost.grid(row=5,column=3)
 
 
 
