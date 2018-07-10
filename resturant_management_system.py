@@ -20,9 +20,10 @@ f2.pack(side=RIGHT)
 
 localtime=time.asctime(time.localtime(time.time()))
 time.sleep(1)
+
 #                           ***
 
-lbfo = Label(Tops, font=( 'aria' ,30, 'bold' ),text="RESTAURANT MANAGEMENT SYSTEM",fg="dark green",bd=10,anchor='w')
+lbfo = Label(Tops, font=( 'aria' ,30, 'bold' ),text="RESTAURANT MANAGEMENT SYSTEM",fg="dark green",bd=10,anchor='ne')
 lbfo.grid(row=0,column=0)
 lbfo = Label(Tops, font=( 'aria' ,20,'bold' ),text=localtime,fg="black",anchor=W)
 lbfo.grid(row=1,column=0)
@@ -51,6 +52,30 @@ def eqals():
 
     text_Input.set(sumup)
     operator = ""
+
+def Ref():
+    a=random.randint()
+    randomRef = str(a)
+    rand.set(randomRef)
+
+
+def reset():
+    rand.set("")
+    Orderrefrence.set("")
+    Largefries.set("")
+    Burger.set("")
+    Vegmeal.set("")
+    NonvegMeal.set("")
+    Subtotal.set("")
+    Total.set("")
+    Thakalifood.set("")
+    Service_Charge.set("")
+    Drinks.set("")
+    StateTax.set("")
+    Costoffood.set("")
+
+def Exit():
+    root.destroy()
 
 
 #...............................Buttons...................................
@@ -117,79 +142,93 @@ status.grid(row=7,columnspan=3)
 #................................................................................................
 
 rand = StringVar()
-Fries = StringVar()
+Orderrefrence = StringVar()
 Largefries = StringVar()
 Burger = StringVar()
-Filet = StringVar()
+Vegmeal = StringVar()
+Nonvegmeal = StringVar()
 Subtotal = StringVar()
 Total = StringVar()
 Service_Charge = StringVar()
 Drinks = StringVar()
-Tax = StringVar()
-cost = StringVar()
-Cheese_burger = StringVar()
+StateTax = StringVar()
+costoffood = StringVar()
+Thakalifood = StringVar()
 
 
-lblRef=Label(f1,font=( 'aria' ,15, 'bold' ),text="Order Refrence",bd=10,anchor='w')
+lblRef=Label(f1,font=( 'aria' ,15, 'bold' ),text="Order Refrence",bd=10,anchor='ne')
 lblRef.grid(row=0,column=0)
-txtRef=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtRef=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtRef.grid(row=0,column=1)
 
 lbllrgfri=Label(f1,font=( 'aria' ,15, 'bold' ),text="Large Fries",bd=10,anchor='w')
 lbllrgfri.grid(row=1,column=0)
-txtlrgfri=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtlrgfri=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtlrgfri.grid(row=1,column=1)
 
 lblBurger=Label(f1,font=( 'aria' ,15, 'bold' ),text="Burger",bd=10,anchor='w')
 lblBurger.grid(row=2,column=0)
-txtBurger=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtBurger=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtBurger.grid(row=2,column=1)
 
 lblVeg_meal=Label(f1,font=( 'aria' ,15, 'bold' ),text="Veg-Meal",bd=10,anchor='w')
 lblVeg_meal.grid(row=3,column=0)
-txtVeg_meal=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtVeg_meal=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtVeg_meal.grid(row=3,column=1)
 
 lblNon_Veg_meal=Label(f1,font=( 'aria' ,15, 'bold' ),text="Non-Veg Meal",bd=10,anchor='w')
 lblNon_Veg_meal.grid(row=4,column=0)
-txtNon_Veg_meal=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtNon_Veg_meal=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtNon_Veg_meal.grid(row=4,column=1)
 
 lblThakali=Label(f1,font=( 'aria' ,15, 'bold' ),text="Thakali food",bd=10,anchor='w')
 lblThakali.grid(row=5,column=0)
-txtThakali=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtThakali=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtThakali.grid(row=5,column=1)
 
 lblDrinks=Label(f1,font=( 'aria' ,15, 'bold' ),text="Drinks",bd=10,anchor='w')
 lblDrinks.grid(row=0,column=2)
-txtDrinks=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtDrinks=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtDrinks.grid(row=0,column=3)
 
 lblcost=Label(f1,font=( 'aria' ,15, 'bold' ),text="Cost of Food",bd=10,anchor='w')
 lblcost.grid(row=1,column=2)
-txtcost=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtcost=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtcost.grid(row=1,column=3)
 
 lblservice=Label(f1,font=( 'aria' ,15, 'bold' ),text="Services Charge",bd=10,anchor='w')
 lblservice.grid(row=2,column=2)
-txtservice=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtservice=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtservice.grid(row=2,column=3)
 
 lblstate=Label(f1,font=( 'aria' ,15, 'bold' ),text="State Tax",bd=10,anchor='w')
 lblstate.grid(row=3,column=2)
-txtstate=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtstate=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtstate.grid(row=3,column=3)
 
 lblsubtotal=Label(f1,font=( 'aria' ,15, 'bold' ),text="Sub Total",bd=10,anchor='w')
 lblsubtotal.grid(row=4,column=2)
-txtsubtotal=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtsubtotal=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtsubtotal.grid(row=4,column=3)
 
-lbltotalcost=Label(f1,font=( 'aria' ,15, 'bold' ),text="Sub Total",bd=10,anchor='w')
+lbltotalcost=Label(f1,font=( 'aria' ,15, 'bold' ),text="TOTAL",bd=10,anchor='w')
 lbltotalcost.grid(row=5,column=2)
-txttotalcost=Entry(f1,font=('ariel', 15 ,'bold'),textvariable=rand,insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txttotalcost=Entry(f1,font=('ariel', 15 ,'bold'),insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txttotalcost.grid(row=5,column=3)
 
 
+#..............................Buttons..........................................................
+
+lblTotal = Label(f1,text="---------------------",fg="white")
+lblTotal.grid(row=6,columnspan=3)
+
+btnTotal=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="TOTAL", bg="powder blue",command=Ref)
+btnTotal.grid(row=7, column=1)
+
+btnreset=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="RESET", bg="powder blue",command=reset)
+btnreset.grid(row=7, column=2)
+
+btnexit=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="EXIT", bg="powder blue",command=Exit)
+btnexit.grid(row=7, column=3)
 
 root.mainloop()
