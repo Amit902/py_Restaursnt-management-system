@@ -60,34 +60,34 @@ def Ref():
     randomRef = str(x)
     rand.set(randomRef)
 
+    colf = float(Largefries.get())
+    cob = float(Burger.get())
+    cov = float(vegmeal.get())
+    con = float(Nonvegmeal.get())
+    cot = float(Thakalifood.get())
+    cod = float(Drinks.get())
 
-colf = float(Largefries.get())
-cob = float(Burger.get())
-cov = float(vegmeal.get())
-con = float(Nonvegmeal.get())
-cot = float(Thakalifood.get())
-cod = float(Drinks.get())
+    costoflargefries = colf * 30
+    costofburger = cob * 25
+    costofveg = cov * 60
+    costofnonveg = con * 80
+    costofthakali = cot * 65
+    costofdrinks = cod * 40
 
-costoflargefries = colf * 30
-costofburger = cob * 25
-costofveg = cov * 60
-costofnonveg = con * 80
-costofthakali = cot * 65
-costofdrinks = cod * 40
+    costoffood = "Rs.", str('%.2f' % (costoflargefries + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks))
+    Totalcost = (costoflargefries + costofburger + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks)
+    PayTax = ((costoflargefries + costofburger + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks) * 0.33)
+    ServiceCharge = ((costoflargefries + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks) / 99)
+    Service = "Rs.", str('%.2f' % ServiceCharge)
+    OverAllCost = "Rs.", str(PayTax + Totalcost + ServiceCharge)
+    PaidTax = "Rs.", str('%.2f' % PayTax)
 
-costoffood = "Rs.", str('%.2f' % (costoflargefries + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks))
-Totalcost = (costoflargefries + costofburger + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks)
-PayTax = ((costoflargefries + costofburger + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks) * 0.33)
-ServiceCharge = ((costoflargefries + costofburger + costofveg + costofnonveg + costofthakali + costofdrinks) / 99)
-Service = "Rs.", str('%.2f' % ServiceCharge)
-OverAllCost = "Rs.", str(PayTax + Totalcost + ServiceCharge)
-PaidTax = "Rs.", str('%.2f' % PayTax)
+    ServiceCharge.set(Service)
+    Cost.set(costoffood)
+    Tax.set(PayTax)
+    Subtotal.set(costoffood)
+    Total.set(OverAllCost)
 
-ServiceCharge.set(Service)
-Cost.set(costoffood)
-Tax.set(PaidTax)
-Subtotal.set(costoffood)
-Total.set(OverAllCost)
 
 
 def reset():
