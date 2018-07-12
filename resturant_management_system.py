@@ -62,7 +62,7 @@ def Ref():
 
     colf = float(Largefries.get())
     cob = float(Burger.get())
-    cov = float(vegmeal.get())
+    cov = float(Vegmeal.get())
     con = float(Nonvegmeal.get())
     cot = float(Thakalifood.get())
     cod = float(Drinks.get())
@@ -82,7 +82,7 @@ def Ref():
     OverAllCost = "Rs.", str(PayTax + Totalcost + ServiceCharge)
     PaidTax = "Rs.", str('%.2f' % PayTax)
 
-    ServiceCharge.set(Service)
+    Servicecharge.set(Service)
     Cost.set(costoffood)
     Tax.set(PayTax)
     Subtotal.set(costoffood)
@@ -92,7 +92,7 @@ def Ref():
 
 def reset():
     rand.set("")
-    #Orderno.set("")
+    Cost.set("")
     Largefries.set("")
     Burger.set("")
     Vegmeal.set("")
@@ -102,7 +102,8 @@ def reset():
     Thakalifood.set("")
     Servicecharge.set("")
     Drinks.set("")
-    Statetax.set("")
+    Tax.set("")
+
     #Costoffood.set("")
 
 def Exit():
@@ -249,7 +250,7 @@ Total = StringVar()
 Servicecharge = StringVar()
 Drinks = StringVar()
 Tax = StringVar()
-cost = StringVar()
+Cost = StringVar()
 Thakalifood = StringVar()
 
 
@@ -293,7 +294,7 @@ txtDrinks.grid(row=0,column=3)
 
 lblcost=Label(f1,font=( 'aria' ,15, 'bold' ),text="cost",bd=10,anchor='w')
 lblcost.grid(row=1,column=2)
-txtcost=Entry(f1,font=('ariel', 15 ,'bold'),textvariable = cost, insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
+txtcost=Entry(f1,font=('ariel', 15 ,'bold'),textvariable = Cost, insertwidth=4,fg="blue", bg="light pink",bd=10,justify='right')
 txtcost.grid(row=1,column=3)
 
 lblservice=Label(f1,font=( 'aria' ,15, 'bold' ),text="Service charge",bd=10,anchor='w')
@@ -337,5 +338,5 @@ btnprice=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),w
 btnprice.grid(row=7, column=0)
 
 
-
 root.mainloop()
+
